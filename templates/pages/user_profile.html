@@ -1,0 +1,18 @@
+{% extends 'news/base.html' %}
+
+{% load static %}
+
+{% block title %} Foydalanuvchi profili {% endblock title %}
+
+{% block content %}
+    <h2>Xush kelibsiz, {{ user.username }}</h2>
+<h3><a href="{% url 'logout' %}">Logout</a></h3>
+<h2>Siz haqingizdagi ma'lumotlar</h2>
+<label>Username</label><input value="{{ user.username }}" readonly placeholder="Komol"><br><br>
+<label>Emailingiz:</label><input value="{{ user.email }}" readonly placeholder="komol@gmail.com"><br><br>
+<label>Ismingiz:</label><input value="{{ user.first_name }}" readonly placeholder="Komoliddin"><br><br>
+<label>Familiyangiz:</label><input value="{{ user.last_name }}" readonly placeholder="Karimov"><br><br>
+
+<h4><a href="{% url 'password_change' %}" style="color:red;">Parolni almashtirish</a></h4>
+
+{% endblock %}
